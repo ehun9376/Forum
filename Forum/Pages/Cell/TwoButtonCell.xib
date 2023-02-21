@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="128" id="8KX-ds-mnJ" customClass="TwoButtonCell" customModule="Forum" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="483" height="128"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8KX-ds-mnJ" id="kqy-yY-VLb">
+                <rect key="frame" x="0.0" y="0.0" width="483" height="128"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EMa-GK-Vly">
+                        <rect key="frame" x="20" y="10" width="443" height="108"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGE-HN-6at">
+                                <rect key="frame" x="0.0" y="0.0" width="211.66666666666666" height="108"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb5-II-8Kl">
+                                <rect key="frame" x="231.66666666666663" y="0.0" width="211.33333333333337" height="108"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="EMa-GK-Vly" secondAttribute="trailing" constant="20" id="8Hz-IA-KpX"/>
+                    <constraint firstAttribute="bottom" secondItem="EMa-GK-Vly" secondAttribute="bottom" constant="10" id="C4j-JJ-aEj"/>
+                    <constraint firstItem="EMa-GK-Vly" firstAttribute="leading" secondItem="kqy-yY-VLb" secondAttribute="leading" constant="20" id="X7T-Gb-Kff"/>
+                    <constraint firstItem="EMa-GK-Vly" firstAttribute="top" secondItem="kqy-yY-VLb" secondAttribute="top" constant="10" id="nIQ-cx-UQo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="leftButton" destination="FGE-HN-6at" id="ZbG-yh-fSA"/>
+                <outlet property="rightButton" destination="tb5-II-8Kl" id="96t-FP-Bl8"/>
+            </connections>
+            <point key="canvasLocation" x="231.29770992366412" y="47.887323943661976"/>
+        </tableViewCell>
+    </objects>
+</document>
