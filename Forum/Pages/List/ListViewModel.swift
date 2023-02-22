@@ -70,7 +70,7 @@ dsa
                                         nameLabelAction: { [weak self] account in
             self?.delegate?.nameButtonPressed(account: account)
         },
-                                        moreButtonAcction: { [weak self] in
+                                        heightChangeAction: { [weak self] in
             self?.adapter?.tableView?.beginUpdates()
             self?.adapter?.tableView?.endUpdates()
         })

@@ -25,18 +25,18 @@ class NewsCellRowModel: CellRowModel {
     
     var nameLabelAction: ((String)->())?
     
-    var moreButtonAcction: (()->())?
+    var heightChangeAction: (()->())?
     
     var isOpen: Bool = false
     
-    init(name: String? = nil, date: String? = nil, headImageURL: String? = nil, content: String? = nil, account: String? = nil , nameLabelAction: ((String)->())?, moreButtonAcction: (()->())? ) {
+    init(name: String? = nil, date: String? = nil, headImageURL: String? = nil, content: String? = nil, account: String? = nil , nameLabelAction: ((String)->())?, heightChangeAction: (()->())? ) {
         self.name = name
         self.date = date
         self.headImageURL = headImageURL
         self.content = content
         self.account = account
         self.nameLabelAction = nameLabelAction
-        self.moreButtonAcction = moreButtonAcction
+        self.heightChangeAction = heightChangeAction
     }
 }
 
@@ -57,6 +57,18 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var textViewHeight: NSLayoutConstraint!
     
     var rowModel: NewsCellRowModel?
+    
+    var normalSize: CGFloat = 100
+    
+    var isOpen: Bool = false {
+        didSet {
+            UIView.animate(withDuration: 0.2) {
+                self.moreButton.isHidden = self.isOpen
+                self.textViewHeight.constant = self.isOpen ? self.contentTextView.contentOfHeight() : self.normalSize
+                self.rowModel?.heightChangeAction?()
+            }
+        }
+    }
     
     override func awakeFromNib() {
         
@@ -81,24 +93,29 @@ class NewsCell: UITableViewCell {
         
         self.headImageView.layer.cornerRadius = 25
         
+        self.contentTextView.layer.borderColor = UIColor.lightGray.cgColor
+        self.contentTextView.layer.borderWidth = 0.5
+        self.contentTextView.layer.cornerRadius = 5
         self.contentTextView.isScrollEnabled = false
         self.contentTextView.isEditable = false
         self.contentTextView.font = .systemFont(ofSize: 16)
+        
+        let textViewTap = UITapGestureRecognizer(target: self, action: #selector(contentTextViewTapAction(_:)))
+        textViewTap.numberOfTapsRequired = 1
+        self.contentTextView.addGestureRecognizer(textViewTap)
         
         self.moreButton.addTarget(self, action: #selector(moreButtonAction(_:)), for: .touchUpInside)
         
     }
     
+    @objc func contentTextViewTapAction(_ sender: UITextView) {
+        if self.isOpen {
+            self.isOpen.toggle()
+        }
+    }
+    
     @objc func moreButtonAction(_ sender:UIButton) {
-        self.rowModel?.isOpen.toggle()
-        
-
-        
-        self.textViewHeight.constant = self.rowModel?.isOpen ?? true ? (self.rowModel?.content ?? "").heightForLabel(width: self.contentTextView.frame.width, font: .systemFont(ofSize: 16)) : 100//self.rowModel?.isOpen ?? true ? CGFloat(self.contentTextView.contentOfLines()) * UIFont.systemFont(ofSize: 16).lineHeight : 100
-        
-        sender.setTitle(self.rowModel?.isOpen ?? true ? "查看更少" : "查看更多", for: .normal)
-        self.rowModel?.moreButtonAcction?()
-        
+        self.isOpen.toggle()
     }
     
     @objc func nameLabelAction() {
@@ -121,12 +138,10 @@ extension NewsCell: CellBinding {
             self.headImageView.image = UIImage(named: "pho_default_pic_home")
         }
         
-        
-        self.textViewHeight.constant = 100
-
+        self.textViewHeight.constant = normalSize
         
         self.moreButton.setTitle(rowModel.isOpen ? "查看更少" : "查看更多", for: .normal)
-        self.moreButton.isHidden = (self.rowModel?.content ?? "").heightForLabel(width: self.contentTextView.frame.width, font: .systemFont(ofSize: 16)) <= 100
+        self.moreButton.isHidden = self.contentTextView.contentOfHeight() <= normalSize
     }
     
     

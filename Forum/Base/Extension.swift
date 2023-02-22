@@ -46,6 +46,12 @@ extension String {
 
 extension UITextView {
     
+    ///根據內容計算理論上應有高度
+    func contentOfHeight() -> CGFloat {
+        let height = self.text.heightForLabel(width: self.frame.width, font: self.font ?? .systemFont(ofSize: 16))
+        return height
+    }
+    
     ///計算現有行
     func numberOfLines() -> Double{
         if let fontUnwrapped = self.font{
