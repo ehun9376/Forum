@@ -11,7 +11,7 @@ import Foundation
 protocol LoginMethod {
     
     func loginComplete(success: Bool)
-    
+    func regisButtonAction()
 }
 
 class LoginViewModel: NSObject {
@@ -62,7 +62,7 @@ class LoginViewModel: NSObject {
     
     func createTwoButtonRowModel() -> CellRowModel {
         let twoButtonRow = TwoButtonCellRowModel(rightButtonTitle: "登入",
-                                                 leftButtonTitle: "清空重填",
+                                                 leftButtonTitle: "註冊",
                                                  rightButtonAction: { [weak self] in
             LoginCenter().login(account: self?.loginModel.account ?? "",
                                 password: self?.loginModel.password ?? "",
@@ -71,8 +71,7 @@ class LoginViewModel: NSObject {
             })
         },
                                                  leftButtonAction: { [weak self] in
-            self?.loginModel.clean()
-            self?.setupRowModel()
+            self?.delegate?.regisButtonAction()
         })
         
         return twoButtonRow

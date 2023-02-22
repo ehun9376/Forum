@@ -50,6 +50,7 @@
 		3682FE5A29A4986A008A3702 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682FE5929A4986A008A3702 /* LoginViewModel.swift */; };
 		3682FE5C29A49A77008A3702 /* LoginCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682FE5B29A49A77008A3702 /* LoginCenter.swift */; };
 		3682FE5E29A4A048008A3702 /* LocalTestCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682FE5D29A4A048008A3702 /* LocalTestCenter.swift */; };
+		36D4185D29A610550016A359 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D4185C29A610550016A359 /* WebController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		3682FE5929A4986A008A3702 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3682FE5B29A49A77008A3702 /* LoginCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCenter.swift; sourceTree = "<group>"; };
 		3682FE5D29A4A048008A3702 /* LocalTestCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTestCenter.swift; sourceTree = "<group>"; };
+		36D4185C29A610550016A359 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		70A601E91FF12C6ADE755E32 /* libPods-Forum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Forum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C119E20F784FA9D96E089A04 /* Pods-Forum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forum.debug.xcconfig"; path = "Target Support Files/Pods-Forum/Pods-Forum.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				3682FE4429A323A1008A3702 /* LanchViewController.swift */,
+				36D4185C29A610550016A359 /* WebController.swift */,
 				3682FE5729A49728008A3702 /* List */,
 				3682FE3629A3125E008A3702 /* AddNewsViewController.swift */,
 				3682FE5829A49858008A3702 /* Login */,
@@ -510,6 +513,7 @@
 				3682FE4E29A46FF9008A3702 /* TwoButtonCell.swift in Sources */,
 				36131F9B299DD07D002C1DF4 /* ListViewController.swift in Sources */,
 				36131FE6299DD6B5002C1DF4 /* NewsCell.swift in Sources */,
+				36D4185D29A610550016A359 /* WebController.swift in Sources */,
 				3682FE4129A321EB008A3702 /* LoginViewController.swift in Sources */,
 				36131FD2299DD0E6002C1DF4 /* CollectionViewAdapter.swift in Sources */,
 				3682FE4329A32205008A3702 /* RegisViewController.swift in Sources */,

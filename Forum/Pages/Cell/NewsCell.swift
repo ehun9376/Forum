@@ -21,20 +21,18 @@ class NewsCellRowModel: CellRowModel {
     
     var content: String?
     
-    var account: String?
     
-    var nameLabelAction: ((String)->())?
+    var nameLabelAction: (()->())?
     
     var heightChangeAction: (()->())?
     
     var isOpen: Bool = false
     
-    init(name: String? = nil, date: String? = nil, headImageURL: String? = nil, content: String? = nil, account: String? = nil , nameLabelAction: ((String)->())?, heightChangeAction: (()->())? ) {
+    init(name: String? = nil, date: String? = nil, headImageURL: String? = nil, content: String? = nil, nameLabelAction: (()->())?, heightChangeAction: (()->())? ) {
         self.name = name
         self.date = date
         self.headImageURL = headImageURL
         self.content = content
-        self.account = account
         self.nameLabelAction = nameLabelAction
         self.heightChangeAction = heightChangeAction
     }
@@ -119,7 +117,7 @@ class NewsCell: UITableViewCell {
     }
     
     @objc func nameLabelAction() {
-        self.rowModel?.nameLabelAction?(rowModel?.account ?? "")
+        self.rowModel?.nameLabelAction?()
     }
 }
 

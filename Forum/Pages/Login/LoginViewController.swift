@@ -35,5 +35,9 @@ extension LoginViewController: LoginMethod {
             self.showSingleAlert(title: "帳號密碼錯誤", message: "請再試一次")
         }
     }
+    func regisButtonAction() {
+        let vc = RegisViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 

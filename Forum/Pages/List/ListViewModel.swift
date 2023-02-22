@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ListViewMethod {
-    func nameButtonPressed(account: String)
+    func nameButtonPressed(model: NewsModel)
 }
 
 class ListViewModel: NSObject {
@@ -66,9 +66,8 @@ dsa
                                         date: newsModel.date,
                                         headImageURL: nil,
                                         content: newsModel.content,
-                                        account: newsModel.account,
-                                        nameLabelAction: { [weak self] account in
-            self?.delegate?.nameButtonPressed(account: account)
+                                        nameLabelAction: { [weak self]  in
+            self?.delegate?.nameButtonPressed(model: newsModel)
         },
                                         heightChangeAction: { [weak self] in
             self?.adapter?.tableView?.beginUpdates()
