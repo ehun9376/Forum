@@ -63,7 +63,7 @@ extension TableViewAdapter: UITableViewDataSource {
         self.rowModels[indexPath.row].tableView = tableView
         let rowModel = self.rowModels[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: rowModel.cellReUseID(), for: indexPath)
-        if let cell = cell as? BaseCellView {
+        if let cell = cell as? CellBinding {
             cell.setupCellView(model: rowModel)
         }
         

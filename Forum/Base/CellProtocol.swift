@@ -8,15 +8,15 @@
 import Foundation
 import UIKit
 
-public protocol BaseCellView {
-    func setupCellView(model: BaseCellModel)
+public protocol CellBinding {
+    func setupCellView(model: CellModelBase)
 }
 
-public protocol BaseCellModel {
+public protocol CellModelBase {
     func cellReUseID() -> String
 }
 
-public class CollectionItemModel: BaseCellModel {
+public class CollectionItemModel: CellModelBase {
     
     var itemSize: CGSize?
     var indexPath: IndexPath?
@@ -46,7 +46,7 @@ public class CollectionItemModel: BaseCellModel {
 
 
 
-open class CellRowModel: BaseCellModel {
+open class CellRowModel: CellModelBase {
     
     open func cellReUseID() -> String {
         fatalError("Need Override ")

@@ -41,11 +41,20 @@ open class BaseViewController: UIViewController {
         KeyboardHelper.shared.unregist()
     }
     
+    func setupBarAppearance(color: UIColor) {
+        let barAppearance = UINavigationBarAppearance()
+        barAppearance.backgroundColor = color
+        barAppearance.shadowColor = .clear
+        barAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14,weight: .bold),NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigationItem.standardAppearance = barAppearance
+        navigationItem.scrollEdgeAppearance = barAppearance
+    }
+    
     public func showAlert(title:String, message: String, confirmTitle: String = "確認", cancelTitle: String = "取消", confirmAction: (()->())?, cancelAction:(()->())?){
         DispatchQueue.main.async {
             let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
             
-            let okAction = UIAlertAction(title: confirmTitle, style: .default) { _ in
+            let okAction = UIAlertAction(title: confirmTitle, style: .destructive) { _ in
                 if let confirmAction = confirmAction {
                     confirmAction()
                 }

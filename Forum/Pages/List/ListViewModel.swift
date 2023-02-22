@@ -28,10 +28,29 @@ class ListViewModel: NSObject {
         
         
         if LocalTestCenter.shared.isLocalTest {
-            rowModels.append(self.createHeadRowModel())
             for model in LocalTestCenter.shared.newsModels.reversed() {
                 rowModels.append(self.creatNewsRowModel(newsModel: model))
             }
+            
+            rowModels.append(self.creatNewsRowModel(newsModel: .init(account: "555", name: "555", content: """
+sdsasd
+
+dasdasdsa
+
+
+asdasdas
+
+
+
+dasdasd
+
+
+adas
+
+asdas
+
+dsa
+""", date: "")))
         } else {
             
         }
@@ -50,7 +69,12 @@ class ListViewModel: NSObject {
                                         account: newsModel.account,
                                         nameLabelAction: { [weak self] account in
             self?.delegate?.nameButtonPressed(account: account)
+        },
+                                        moreButtonAcction: { [weak self] in
+            self?.adapter?.tableView?.beginUpdates()
+            self?.adapter?.tableView?.endUpdates()
         })
+                                                
         
         return rowModel
     }

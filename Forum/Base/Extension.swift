@@ -16,6 +16,45 @@ enum SessionSetupResult {
     case configurationFailed
 }
 
+extension String {
+    /// 给定最大宽计算高度，传入字体、行距、对齐方式（便捷调用）
+    func heightForLabel(width: CGFloat, font: UIFont, lineSpacing: CGFloat = 5, alignment: NSTextAlignment = .left) -> CGFloat {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.alignment = alignment
+        let attributes = [
+            NSAttributedString.Key.font: font,
+            NSAttributedString.Key.paragraphStyle: paragraphStyle
+        ]
+        let textSize = textSizeForLabel(width: width, height: CGFloat(Float.greatestFiniteMagnitude), attr: attributes)
+        return textSize.height
+    }
+    
+    func textSizeForLabel(width: CGFloat, height: CGFloat, attr: [NSAttributedString.Key : Any]) -> CGSize {
+        let defaultOptions: NSStringDrawingOptions = [.usesLineFragmentOrigin, .usesFontLeading]
+        let maxSize = CGSize(width: width, height: height)
+        let rect = self.boundingRect(with: maxSize,
+                                     options: defaultOptions,
+                                     attributes: attr,
+                                     context: nil)
+        let textWidth: CGFloat = CGFloat(Int(rect.width) + 1)
+        let textHeight: CGFloat = CGFloat(Int(rect.height) + 1)
+        return CGSize(width: textWidth, height: textHeight)
+    }
+
+}
+
+extension UITextView {
+    
+    ///計算現有行
+    func numberOfLines() -> Double{
+        if let fontUnwrapped = self.font{
+            return Double(self.frame.height / fontUnwrapped.lineHeight)
+        }
+        return 0
+    }
+}
+
 extension Date {
     func toString() -> String {
         let dateFormat = "yyyy-MM-dd hh:mm:ss" // Use your own

@@ -18,6 +18,8 @@ class ListViewController: BaseTableViewController {
         super.viewDidLoad()
         self.title = "討論區"
         
+        self.setupBarAppearance(color: .white)
+        
         self.resetTableView()
         self.setupFloatButton()
         self.setupRightItem()
@@ -36,10 +38,16 @@ class ListViewController: BaseTableViewController {
         super.viewWillAppear(animated)
         self.viewModel?.setupRowModel()
         self.setupRightItem()
+        
     }
+    
     
     func resetTableView() {
         self.defaultTableView.removeFromSuperview()
+        self.defaultTableView.separatorStyle = .none
+        self.defaultTableView.backgroundColor = .lightGray
+        
+        self.view.backgroundColor = .lightGray
         
         self.view.addSubview(self.defaultTableView)
         

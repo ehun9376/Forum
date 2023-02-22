@@ -34,6 +34,8 @@ class PlaceHolderTextView: UITextView {
         self.placeHolderLabel.text = placeHolder
         self.placeHolderLabel.textColor = .init(red: 0, green: 0, blue: 0, alpha: 0.5)
         
+        self.font = .systemFont(ofSize: 16)
+        
         self.addSubview(self.placeHolderLabel)
         
         NSLayoutConstraint.activate([

@@ -67,7 +67,7 @@ extension CollectionViewAdapter: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: itemModel.cellReUseID(), for: indexPath)
         
-        if let cell = cell as? BaseCellView {
+        if let cell = cell as? CellBinding {
             cell.setupCellView(model: itemModel)
         }
         

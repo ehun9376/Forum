@@ -15,14 +15,18 @@ class TitleTextFieldCellRowModel: CellRowModel {
     
     var title: String?
     
+    var content: String?
+    
     var placeHolder: String?
     
     var didEditAction: ((String)->())?
     
     init(title: String? = nil,
+         content: String? = nil,
          placeHolder: String?,
          didEditAction: ((String)->())?) {
         self.title = title
+        self.content = content
         self.placeHolder = placeHolder
         self.didEditAction = didEditAction
     }
@@ -48,11 +52,14 @@ class TitleTextFieldCell: UITableViewCell {
 }
 
 
-extension TitleTextFieldCell: BaseCellView {
-    func setupCellView(model: BaseCellModel) {
+extension TitleTextFieldCell: CellBinding {
+
+    
+    func setupCellView(model: CellModelBase) {
         guard let rowModel = model as? TitleTextFieldCellRowModel else { return }
         self.rowModel = rowModel
         self.titleLabel.text = rowModel.title
+        self.contentTExtField.text = rowModel.content
     }
     
     

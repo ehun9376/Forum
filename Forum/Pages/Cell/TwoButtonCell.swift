@@ -65,8 +65,9 @@ class TwoButtonCell: UITableViewCell {
     
 }
 
-extension TwoButtonCell: BaseCellView {
-    func setupCellView(model: BaseCellModel) {
+extension TwoButtonCell: CellBinding {
+
+    func setupCellView(model: CellModelBase) {
         guard let rowModel = model as? TwoButtonCellRowModel else { return }
         
         self.rowModel = rowModel

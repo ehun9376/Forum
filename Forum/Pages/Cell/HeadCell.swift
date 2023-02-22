@@ -33,8 +33,9 @@ class HeadCell: UITableViewCell {
     
 }
 
-extension HeadCell: BaseCellView {
-    func setupCellView(model: BaseCellModel) {
+extension HeadCell: CellBinding {
+    
+    func setupCellView(model: CellModelBase) {
         guard let rowModel = model as? HeadCellRowModel else { return }
         
         if let urlText = rowModel.headImageURLText {
