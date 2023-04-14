@@ -29,9 +29,11 @@ class RegisViewController: BaseTableViewController {
 }
 
 extension RegisViewController: RegisMethod {
-    func regisComplete() {
-        self.navigationController?.popViewController(animated: true)
+    func regisComplete(success: Bool, text: String) {
+        self.showToast(message: text) { [weak self] in
+            if success {
+                self?.navigationController?.popViewController(animated: true)
+            }
+        }
     }
-    
-    
 }

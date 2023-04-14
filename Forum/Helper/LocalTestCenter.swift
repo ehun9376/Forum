@@ -11,7 +11,7 @@ class LocalTestCenter: NSObject {
     
     static let shared = LocalTestCenter()
     
-    var isLocalTest: Bool = true
+    var isLocalTest: Bool = false
     
     var newsModels: [NewsModel] = []
     

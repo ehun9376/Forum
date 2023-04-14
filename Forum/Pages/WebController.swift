@@ -58,8 +58,6 @@ class WebViewController: UIViewController {
         button.setTitle("下一頁", for: .normal)
         button.setTitleColor(.black, for: .normal)
         let screenSize: CGRect = UIScreen.main.bounds
-        let screenWidth = screenSize.width
-        let screenHeight = screenSize.height
 
         button.frame = CGRectMake(self.view.frame.width-75, self.view.frame.height-70, 56, 56) // (X, Y, Height, Width)
         button.addTarget(self, action: #selector(forword), for: .touchUpInside)
@@ -77,8 +75,6 @@ class WebViewController: UIViewController {
         button.setTitle("上一頁", for: .normal)
         button.setTitleColor(.black, for: .normal)
         let screenSize: CGRect = UIScreen.main.bounds
-        let screenWidth = screenSize.width
-        let screenHeight = screenSize.height
 
         button.frame = CGRectMake(5, self.view.frame.height-70, 56, 56) // (X, Y, Height, Width)
         button.addTarget(self, action: #selector(back), for: .touchUpInside)

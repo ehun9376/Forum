@@ -50,6 +50,7 @@
 		3682FE5A29A4986A008A3702 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682FE5929A4986A008A3702 /* LoginViewModel.swift */; };
 		3682FE5C29A49A77008A3702 /* LoginCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682FE5B29A49A77008A3702 /* LoginCenter.swift */; };
 		3682FE5E29A4A048008A3702 /* LocalTestCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682FE5D29A4A048008A3702 /* LocalTestCenter.swift */; };
+		369C0A3329E9057F00155112 /* DefaultSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369C0A3229E9057F00155112 /* DefaultSuccessModel.swift */; };
 		36D4185D29A610550016A359 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D4185C29A610550016A359 /* WebController.swift */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,7 @@
 		3682FE5929A4986A008A3702 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3682FE5B29A49A77008A3702 /* LoginCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCenter.swift; sourceTree = "<group>"; };
 		3682FE5D29A4A048008A3702 /* LocalTestCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTestCenter.swift; sourceTree = "<group>"; };
+		369C0A3229E9057F00155112 /* DefaultSuccessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSuccessModel.swift; sourceTree = "<group>"; };
 		36D4185C29A610550016A359 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		70A601E91FF12C6ADE755E32 /* libPods-Forum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Forum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C119E20F784FA9D96E089A04 /* Pods-Forum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forum.debug.xcconfig"; path = "Target Support Files/Pods-Forum/Pods-Forum.debug.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		36131FE1299DD629002C1DF4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				369C0A3229E9057F00155112 /* DefaultSuccessModel.swift */,
 				36131FE2299DD660002C1DF4 /* NewsListModel.swift */,
 				3682FE5529A49714008A3702 /* RegisModel.swift */,
 			);
@@ -503,6 +506,7 @@
 				3682FE5C29A49A77008A3702 /* LoginCenter.swift in Sources */,
 				36131FE0299DD618002C1DF4 /* ListViewModel.swift in Sources */,
 				3682FE4A29A46B00008A3702 /* TitleTextFieldCell.swift in Sources */,
+				369C0A3329E9057F00155112 /* DefaultSuccessModel.swift in Sources */,
 				36131FD1299DD0E6002C1DF4 /* Extension.swift in Sources */,
 				3682FE4729A325C8008A3702 /* UserInfoCenter.swift in Sources */,
 				3682FE5A29A4986A008A3702 /* LoginViewModel.swift in Sources */,

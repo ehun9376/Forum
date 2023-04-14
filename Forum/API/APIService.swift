@@ -37,163 +37,63 @@ class APIService: NSObject {
     
     static let shared = APIService()
     
-    enum URLText: String {
-        case ChatGPTURL = "https://api.openai.com/v1/completions"
-    }
-    
-    private var session: URLSession!
+    private let apiQueue = DispatchQueue(label: "api_queue", qos: .utility)
 
-    var savedCompletionHandler: (() -> Void)?
-        
-    private override init() {
-        super.init()
-        
-        session = URLSession(configuration: URLSessionConfiguration.background(withIdentifier: "api_queue"),
-                             delegate: self,
-                             delegateQueue: nil)
+    enum URLText: String {
+        case regis = "http://www.yihuang.online/regis.php?"
+        case login = "http://www.yihuang.online/login.php?"
     }
-    
-    func createTokenWithJsonHeader() -> HTTPHeaderField {
+    //http://www.yihuang.online/regis.php?name=johnhhh&account=joh123456&password=1234&birthday=0850501
+    //http://www.yihuang.online/login.php?account=joh123456&password=1234
         
-        let apiKey = "sk/3f2sQR1S6Ne9v2UovhgiT3BlbkFJ8iF9gaPfDj46t2m4qPmd"
+    func requestWithParam<T: JsonModel>(httpMethod: HttpMethod = .post, headerField: HTTPHeaderField? = [:] , urlText: URLText, params: parameter, modelType: T.Type ,  completeAction: @escaping CompleteAction<T>) {
         
-        let key = apiKey.replacingOccurrences(of: "/", with: "-")
+        var url = urlText.rawValue
         
-        return [
-            "Content-Type" : "application/json",
-            "Authorization": "Bearer \(key)"
-        ]
-    }
-    
-    var completeAction: ((_ json: JBJson?, _ error: Error?)->())?
-    
-    func requestWithParam<T: JsonModel>(httpMethod: HttpMethod, headerField: HTTPHeaderField, urlText: URLText, param: parameter, modelType: T.Type ,  completeAction: @escaping CompleteAction<T>) {
+        var paramText: [String] = []
+        for param in params {
+            paramText.append("\(param.key)=\(param.value)")
+        }
+        let paramTextUrl = paramText.joined(separator: "&")
+        url = url + paramTextUrl
         
-        if let url = URL(string: urlText.rawValue) {
+        if let text = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            url = text
+        }
+        
+        if let url = URL(string: url) {
             var request = URLRequest(url: url)
             
-            for header in headerField {
+            for header in headerField ?? [:] {
                 request.setValue(header.value, forHTTPHeaderField: header.key)
             }
             
-            do {
-                request.httpBody = try JSONSerialization.data(withJSONObject: param, options: JSONSerialization.WritingOptions())
-            } catch {
-                completeAction(nil, error)
-            }
+
             
             request.httpMethod = httpMethod.rawValue
+
             
-            session.downloadTask(with: request).resume()
-            
-            self.completeAction = { json, error in
-                if let json = json {
-                    completeAction(modelType.init(json: json), error)
+            self.apiQueue.async {
+                let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
+
+                    if let error = error {
+                        completeAction(nil, error)
+                    } else if let data = data {
+                        do {
+                            let json = try JBJson(data: data)
+                            print(json)
+                            completeAction(modelType.init(json: json), error)
+                        } catch {
+                            completeAction(nil, error)
+                        }
+                    }
                 }
+
+                task.resume()
             }
-//            self.apiQueue.async {
-//                let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
-//
-//                    if let error = error {
-//                        completeAction(nil, error)
-//                    } else if let data = data {
-//                        do {
-//                            let json = try JBJson(data: data)
-//                            print(json)
-//                            completeAction(modelType.init(json: json), error)
-//                        } catch {
-//                            completeAction(nil, error)
-//                        }
-//                    }
-//                }
-//
-//                task.resume()
-//            }
         }
     }
     
 }
 
-extension APIService: URLSessionDelegate {
-    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
-        DispatchQueue.main.async {
-            self.savedCompletionHandler?()
-            self.savedCompletionHandler = nil
-        }
-    }
-}
 
-extension APIService: URLSessionTaskDelegate {
-    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        if let error = error {
-            // handle failure here
-            self.completeAction?(nil, error)
-        }
-    }
-}
-
-extension APIService: URLSessionDownloadDelegate {
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        do {
-            let data = try Data(contentsOf: location)
-            let json = try JBJson(data: data)
-            print(json)
-            self.completeAction?(json, nil)
-        } catch {
-            self.completeAction?(nil, error)
-        }
-    }
-}
-
-//class BackgroundSession: NSObject {
-//    static let shared = BackgroundSession()
-//
-//    static let identifier = "com.domain.app.bg"
-//
-//    private var session: URLSession!
-//
-//    var savedCompletionHandler: (() -> Void)?
-//
-//    private override init() {
-//        super.init()
-//
-//        let configuration = URLSessionConfiguration.background(withIdentifier: BackgroundSession.identifier)
-//        session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
-//    }
-//
-//    func start(_ request: URLRequest) {
-//        session.downloadTask(with: request).resume()
-//    }
-//}
-//
-//extension BackgroundSession: URLSessionDelegate {
-//    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
-//        DispatchQueue.main.async {
-//            self.savedCompletionHandler?()
-//            self.savedCompletionHandler = nil
-//        }
-//    }
-//}
-//
-//extension BackgroundSession: URLSessionTaskDelegate {
-//    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-//        if let error = error {
-//            // handle failure here
-//            print("\(error.localizedDescription)")
-//        }
-//    }
-//}
-//
-//extension BackgroundSession: URLSessionDownloadDelegate {
-//    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-//        do {
-//            let data = try Data(contentsOf: location)
-//            let json = try JSONSerialization.jsonObject(with: data)
-//
-//            print("\(json)")
-//            // do something with json
-//        } catch {
-//            print("\(error.localizedDescription)")
-//        }
-//    }
-//}

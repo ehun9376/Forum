@@ -9,7 +9,7 @@ import Foundation
 
 
 protocol RegisMethod {
-    func regisComplete()
+    func regisComplete(success: Bool, text: String)
     
 }
 
@@ -65,14 +65,14 @@ class RegisViewModel: NSObject {
         })
         
         rowModels.append(nameRow)
-        
-        let addressRow = TitleTextFieldCellRowModel(title: "地址:",
-                                                    placeHolder: "輸入您的地址",
-                                                    didEditAction: { [weak self] text in
-            self?.regisModel.address = text
-        })
-        
-        rowModels.append(addressRow)
+//
+//        let addressRow = TitleTextFieldCellRowModel(title: "地址:",
+//                                                    placeHolder: "輸入您的地址",
+//                                                    didEditAction: { [weak self] text in
+//            self?.regisModel.address = text
+//        })
+//
+//        rowModels.append(addressRow)
         
         let birthdayRow = TitleTextFieldCellRowModel(title: "生日",
                                                     placeHolder: "輸入您的生日",
@@ -93,9 +93,27 @@ class RegisViewModel: NSObject {
             //TODO: -送出的API
             if LocalTestCenter.shared.isLocalTest {
                 LocalTestCenter.shared.regisModel.append(self?.regisModel ?? .init())
-                self?.delegate?.regisComplete()
+                self?.delegate?.regisComplete(success: true, text: "註冊成功")
             } else {
                 
+                //http://www.yihuang.online/regis.php?name=johnhhh&account=joh123456&password=1234&birthday=0850501
+                
+                let param: parameter = [
+                    "name": self?.regisModel.name ?? "",
+                    "account":self?.regisModel.account ?? "",
+                    "password":self?.regisModel.password ?? "",
+                    "birthday":self?.regisModel.birthday ?? ""
+                ]
+                
+                APIService.shared.requestWithParam(urlText: .login,
+                                                   params: param,
+                                                   modelType: DefaultSuccessModel.self) { jsonModel, error in
+                    if let model = jsonModel {
+                        self?.delegate?.regisComplete(success: model.status, text: model.message)
+                    } else {
+                        self?.delegate?.regisComplete(success: false, text: "註冊失敗")
+                    }
+                }
             }
         },
                                                  leftButtonAction: { [weak self] in

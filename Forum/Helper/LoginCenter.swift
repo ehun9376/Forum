@@ -46,10 +46,25 @@ class LoginCenter: NSObject {
         } else {
             //TODO: -登入ＡＰＩ
             
-            StatusCenter.shared.login()
-            UserInfoCenter.shared.storeValue(.userAccount, data: account)
-            UserInfoCenter.shared.storeValue(.userPassword, data: password)
-            complete?(true)
+//        http://www.yihuang.online/login.php?account=joh123456&password=1234
+            
+            let param: parameter = [
+                "account": account,
+                "password": password
+            ]
+            
+            APIService.shared.requestWithParam(urlText: .login, params: param, modelType: DefaultSuccessModel.self) { jsonModel, error in
+                if let jsonModel = jsonModel, jsonModel.status {
+                    StatusCenter.shared.login()
+                    UserInfoCenter.shared.storeValue(.userAccount, data: account)
+                    UserInfoCenter.shared.storeValue(.userPassword, data: password)
+                    complete?(true)
+                } else {
+                    complete?(false)
+                }
+
+            }
+
         }
 
     }
