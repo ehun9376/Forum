@@ -7,14 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		017443310F1EECF8A46E254C /* libPods-Forum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A601E91FF12C6ADE755E32 /* libPods-Forum.a */; };
 		36131F97299DD07D002C1DF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36131F96299DD07D002C1DF4 /* AppDelegate.swift */; };
 		36131F9B299DD07D002C1DF4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36131F9A299DD07D002C1DF4 /* ListViewController.swift */; };
 		36131FA0299DD07E002C1DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36131F9F299DD07E002C1DF4 /* Assets.xcassets */; };
 		36131FA3299DD07E002C1DF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36131FA1299DD07E002C1DF4 /* LaunchScreen.storyboard */; };
-		36131FAE299DD07E002C1DF4 /* ForumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36131FAD299DD07E002C1DF4 /* ForumTests.swift */; };
-		36131FB8299DD07E002C1DF4 /* ForumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36131FB7299DD07E002C1DF4 /* ForumUITests.swift */; };
-		36131FBA299DD07E002C1DF4 /* ForumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36131FB9299DD07E002C1DF4 /* ForumUITestsLaunchTests.swift */; };
 		36131FD1299DD0E6002C1DF4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36131FC6299DD0E6002C1DF4 /* Extension.swift */; };
 		36131FD2299DD0E6002C1DF4 /* CollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36131FC7299DD0E6002C1DF4 /* CollectionViewAdapter.swift */; };
 		36131FD3299DD0E6002C1DF4 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36131FC8299DD0E6002C1DF4 /* KeyboardHelper.swift */; };
@@ -30,7 +26,6 @@
 		36131FE3299DD660002C1DF4 /* NewsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36131FE2299DD660002C1DF4 /* NewsListModel.swift */; };
 		36131FE6299DD6B5002C1DF4 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36131FE5299DD6B5002C1DF4 /* NewsCell.swift */; };
 		36131FE8299DD70C002C1DF4 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36131FE7299DD70C002C1DF4 /* NewsCell.xib */; };
-		36131FEC299DDD90002C1DF4 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36131FEB299DDD90002C1DF4 /* libSDWebImage.a */; };
 		3613E6E2299E130D00955044 /* HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3613E6E1299E130D00955044 /* HeadCell.swift */; };
 		3613E6E4299E148200955044 /* HeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3613E6E3299E148200955044 /* HeadCell.xib */; };
 		3682FE3729A3125E008A3702 /* AddNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682FE3629A3125E008A3702 /* AddNewsViewController.swift */; };
@@ -54,36 +49,13 @@
 		36D4185D29A610550016A359 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D4185C29A610550016A359 /* WebController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		36131FAA299DD07E002C1DF4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 36131F8B299DD07D002C1DF4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 36131F92299DD07D002C1DF4;
-			remoteInfo = Forum;
-		};
-		36131FB4299DD07E002C1DF4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 36131F8B299DD07D002C1DF4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 36131F92299DD07D002C1DF4;
-			remoteInfo = Forum;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		1024A25BE1FF9C532E4ACD69 /* Pods-Forum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forum.release.xcconfig"; path = "Target Support Files/Pods-Forum/Pods-Forum.release.xcconfig"; sourceTree = "<group>"; };
 		36131F93299DD07D002C1DF4 /* Forum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36131F96299DD07D002C1DF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36131F9A299DD07D002C1DF4 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		36131F9F299DD07E002C1DF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36131FA2299DD07E002C1DF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36131FA4299DD07E002C1DF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36131FA9299DD07E002C1DF4 /* ForumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		36131FAD299DD07E002C1DF4 /* ForumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumTests.swift; sourceTree = "<group>"; };
-		36131FB3299DD07E002C1DF4 /* ForumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		36131FB7299DD07E002C1DF4 /* ForumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumUITests.swift; sourceTree = "<group>"; };
-		36131FB9299DD07E002C1DF4 /* ForumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		36131FC6299DD0E6002C1DF4 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		36131FC7299DD0E6002C1DF4 /* CollectionViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewAdapter.swift; sourceTree = "<group>"; };
 		36131FC8299DD0E6002C1DF4 /* KeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
@@ -99,8 +71,6 @@
 		36131FE2299DD660002C1DF4 /* NewsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListModel.swift; sourceTree = "<group>"; };
 		36131FE5299DD6B5002C1DF4 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		36131FE7299DD70C002C1DF4 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
-		36131FE9299DDD53002C1DF4 /* libSDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSDWebImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		36131FEB299DDD90002C1DF4 /* libSDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSDWebImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3613E6E1299E130D00955044 /* HeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadCell.swift; sourceTree = "<group>"; };
 		3613E6E3299E148200955044 /* HeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadCell.xib; sourceTree = "<group>"; };
 		3682FE3629A3125E008A3702 /* AddNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsViewController.swift; sourceTree = "<group>"; };
@@ -122,28 +92,10 @@
 		3682FE5D29A4A048008A3702 /* LocalTestCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTestCenter.swift; sourceTree = "<group>"; };
 		369C0A3229E9057F00155112 /* DefaultSuccessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSuccessModel.swift; sourceTree = "<group>"; };
 		36D4185C29A610550016A359 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
-		70A601E91FF12C6ADE755E32 /* libPods-Forum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Forum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C119E20F784FA9D96E089A04 /* Pods-Forum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forum.debug.xcconfig"; path = "Target Support Files/Pods-Forum/Pods-Forum.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		36131F90299DD07D002C1DF4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				36131FEC299DDD90002C1DF4 /* libSDWebImage.a in Frameworks */,
-				017443310F1EECF8A46E254C /* libPods-Forum.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		36131FA6299DD07E002C1DF4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		36131FB0299DD07E002C1DF4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -157,11 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				36131F95299DD07D002C1DF4 /* Forum */,
-				36131FAC299DD07E002C1DF4 /* ForumTests */,
-				36131FB6299DD07E002C1DF4 /* ForumUITests */,
 				36131F94299DD07D002C1DF4 /* Products */,
-				AB89F68A84509C4035A1F6EB /* Pods */,
-				72F8121B28D594CEA83BE3B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,8 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				36131F93299DD07D002C1DF4 /* Forum.app */,
-				36131FA9299DD07E002C1DF4 /* ForumTests.xctest */,
-				36131FB3299DD07E002C1DF4 /* ForumUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,23 +134,6 @@
 				36131FA4299DD07E002C1DF4 /* Info.plist */,
 			);
 			path = Forum;
-			sourceTree = "<group>";
-		};
-		36131FAC299DD07E002C1DF4 /* ForumTests */ = {
-			isa = PBXGroup;
-			children = (
-				36131FAD299DD07E002C1DF4 /* ForumTests.swift */,
-			);
-			path = ForumTests;
-			sourceTree = "<group>";
-		};
-		36131FB6299DD07E002C1DF4 /* ForumUITests */ = {
-			isa = PBXGroup;
-			children = (
-				36131FB7299DD07E002C1DF4 /* ForumUITests.swift */,
-				36131FB9299DD07E002C1DF4 /* ForumUITestsLaunchTests.swift */,
-			);
-			path = ForumUITests;
 			sourceTree = "<group>";
 		};
 		36131FDC299DD0EB002C1DF4 /* Base */ = {
@@ -320,25 +249,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		72F8121B28D594CEA83BE3B7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				36131FEB299DDD90002C1DF4 /* libSDWebImage.a */,
-				36131FE9299DDD53002C1DF4 /* libSDWebImage.a */,
-				70A601E91FF12C6ADE755E32 /* libPods-Forum.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AB89F68A84509C4035A1F6EB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C119E20F784FA9D96E089A04 /* Pods-Forum.debug.xcconfig */,
-				1024A25BE1FF9C532E4ACD69 /* Pods-Forum.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -346,7 +256,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36131FBD299DD07E002C1DF4 /* Build configuration list for PBXNativeTarget "Forum" */;
 			buildPhases = (
-				13D7281AA42FBE07327D18C3 /* [CP] Check Pods Manifest.lock */,
 				36131F8F299DD07D002C1DF4 /* Sources */,
 				36131F90299DD07D002C1DF4 /* Frameworks */,
 				36131F91299DD07D002C1DF4 /* Resources */,
@@ -360,42 +269,6 @@
 			productReference = 36131F93299DD07D002C1DF4 /* Forum.app */;
 			productType = "com.apple.product-type.application";
 		};
-		36131FA8299DD07E002C1DF4 /* ForumTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 36131FC0299DD07E002C1DF4 /* Build configuration list for PBXNativeTarget "ForumTests" */;
-			buildPhases = (
-				36131FA5299DD07E002C1DF4 /* Sources */,
-				36131FA6299DD07E002C1DF4 /* Frameworks */,
-				36131FA7299DD07E002C1DF4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				36131FAB299DD07E002C1DF4 /* PBXTargetDependency */,
-			);
-			name = ForumTests;
-			productName = ForumTests;
-			productReference = 36131FA9299DD07E002C1DF4 /* ForumTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		36131FB2299DD07E002C1DF4 /* ForumUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 36131FC3299DD07E002C1DF4 /* Build configuration list for PBXNativeTarget "ForumUITests" */;
-			buildPhases = (
-				36131FAF299DD07E002C1DF4 /* Sources */,
-				36131FB0299DD07E002C1DF4 /* Frameworks */,
-				36131FB1299DD07E002C1DF4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				36131FB5299DD07E002C1DF4 /* PBXTargetDependency */,
-			);
-			name = ForumUITests;
-			productName = ForumUITests;
-			productReference = 36131FB3299DD07E002C1DF4 /* ForumUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -408,14 +281,6 @@
 				TargetAttributes = {
 					36131F92299DD07D002C1DF4 = {
 						CreatedOnToolsVersion = 14.2;
-					};
-					36131FA8299DD07E002C1DF4 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 36131F92299DD07D002C1DF4;
-					};
-					36131FB2299DD07E002C1DF4 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 36131F92299DD07D002C1DF4;
 					};
 				};
 			};
@@ -433,8 +298,6 @@
 			projectRoot = "";
 			targets = (
 				36131F92299DD07D002C1DF4 /* Forum */,
-				36131FA8299DD07E002C1DF4 /* ForumTests */,
-				36131FB2299DD07E002C1DF4 /* ForumUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -453,46 +316,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		36131FA7299DD07E002C1DF4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		36131FB1299DD07E002C1DF4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		13D7281AA42FBE07327D18C3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Forum-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36131F8F299DD07D002C1DF4 /* Sources */ = {
@@ -536,37 +360,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		36131FA5299DD07E002C1DF4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				36131FAE299DD07E002C1DF4 /* ForumTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		36131FAF299DD07E002C1DF4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				36131FBA299DD07E002C1DF4 /* ForumUITestsLaunchTests.swift in Sources */,
-				36131FB8299DD07E002C1DF4 /* ForumUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		36131FAB299DD07E002C1DF4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 36131F92299DD07D002C1DF4 /* Forum */;
-			targetProxy = 36131FAA299DD07E002C1DF4 /* PBXContainerItemProxy */;
-		};
-		36131FB5299DD07E002C1DF4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 36131F92299DD07D002C1DF4 /* Forum */;
-			targetProxy = 36131FB4299DD07E002C1DF4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		36131FA1299DD07E002C1DF4 /* LaunchScreen.storyboard */ = {
@@ -696,7 +490,6 @@
 		};
 		36131FBE299DD07E002C1DF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C119E20F784FA9D96E089A04 /* Pods-Forum.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -728,7 +521,6 @@
 		};
 		36131FBF299DD07E002C1DF4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1024A25BE1FF9C532E4ACD69 /* Pods-Forum.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -758,82 +550,6 @@
 			};
 			name = Release;
 		};
-		36131FC1299DD07E002C1DF4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NZT54R9366;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ehun.ForumTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Forum.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Forum";
-			};
-			name = Debug;
-		};
-		36131FC2299DD07E002C1DF4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NZT54R9366;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ehun.ForumTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Forum.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Forum";
-			};
-			name = Release;
-		};
-		36131FC4299DD07E002C1DF4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NZT54R9366;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ehun.ForumUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Forum;
-			};
-			name = Debug;
-		};
-		36131FC5299DD07E002C1DF4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NZT54R9366;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ehun.ForumUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Forum;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -851,24 +567,6 @@
 			buildConfigurations = (
 				36131FBE299DD07E002C1DF4 /* Debug */,
 				36131FBF299DD07E002C1DF4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		36131FC0299DD07E002C1DF4 /* Build configuration list for PBXNativeTarget "ForumTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				36131FC1299DD07E002C1DF4 /* Debug */,
-				36131FC2299DD07E002C1DF4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		36131FC3299DD07E002C1DF4 /* Build configuration list for PBXNativeTarget "ForumUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				36131FC4299DD07E002C1DF4 /* Debug */,
-				36131FC5299DD07E002C1DF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
