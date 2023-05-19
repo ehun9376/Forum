@@ -16,7 +16,7 @@ class NewsListModel: JsonModel {
     var listModel: [NewsModel] = []
     
     required init(json: JBJson) {
-        self.success = json["success"].booleanValue
+        self.success = json["status"].booleanValue
         self.message = json["message"].stringValue
         self.listModel = json["list"].arrayValue.map({NewsModel(json: $0)})
     }
@@ -26,9 +26,7 @@ class NewsListModel: JsonModel {
 class NewsModel: JsonModel {
     
     var account: String?
-    
-    var name: String?
-    
+        
     var content: String?
     
     var date: String?
@@ -39,19 +37,16 @@ class NewsModel: JsonModel {
     
     required init(json: JBJson) {
         self.account = json["account"].stringValue
-        self.name = json["name"].stringValue
         self.content = json["content"].stringValue
         self.date = json["date"].stringValue
     }
     
     convenience init(
         account: String?,
-        name: String?,
         content: String?,
         date: String?
     ){
         self.init()
-        self.name = name
         self.content = content
         self.date = date
     }

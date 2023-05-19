@@ -24,45 +24,38 @@ class ListViewModel: NSObject {
     
     func setupRowModel() {
         var rowModels: [CellRowModel] = []
-        
-        
-        
+
         if LocalTestCenter.shared.isLocalTest {
             for model in LocalTestCenter.shared.newsModels.reversed() {
                 rowModels.append(self.creatNewsRowModel(newsModel: model))
             }
-            
-            rowModels.append(self.creatNewsRowModel(newsModel: .init(account: "555", name: "555", content: """
-sdsasd
-
-dasdasdsa
-
-
-asdasdas
-
-
-
-dasdasd
-
-
-adas
-
-asdas
-
-dsa
-""", date: "")))
+            self.adapter?.updateTableViewData(rowModels: rowModels)
         } else {
-            
+            APIService.shared.requestWithParam(urlText: .getAllPost, params: [:], modelType: NewsListModel.self) { jsonModel, error in
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                
+                if let jsonModel = jsonModel, jsonModel.success {
+                    for model in jsonModel.listModel.reversed() {
+                        rowModels.append(self.creatNewsRowModel(newsModel: model))
+                    }
+                    self.adapter?.updateTableViewData(rowModels: rowModels)
+                } else {
+                    print(jsonModel?.message ?? "")
+                }
+            }
         }
 
         
-        self.adapter?.updateTableViewData(rowModels: rowModels)
+       
         
     }
     
     func creatNewsRowModel(newsModel: NewsModel) -> CellRowModel {
         
-        let rowModel = NewsCellRowModel(name: newsModel.name,
+        let rowModel = NewsCellRowModel(name: newsModel.account,
                                         date: newsModel.date,
                                         headImageURL: nil,
                                         content: newsModel.content,

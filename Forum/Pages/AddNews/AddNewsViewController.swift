@@ -56,17 +56,29 @@ class AddNewsViewController: BaseViewController {
         
         if LocalTestCenter.shared.isLocalTest {
             let model = NewsModel(account: UserInfoCenter.shared.loadValue(.userAccount) as? String ?? "",
-                                  name: UserInfoCenter.shared.loadValue(.userName) as? String ?? "",
                                   content: content,
                                   date: Date().toString())
             LocalTestCenter.shared.newsModels.append(model)
+            self.showToast(message: "已送出", complete: { [weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            })
         } else {
             
+            let param = [
+                "account": UserInfoCenter.shared.loadValue(.userAccount) ?? "",
+                "content": content,
+            ]
+            APIService.shared.requestWithParam(urlText: .addPost, params: param, modelType: DefaultSuccessModel.self) { jsonModel, error in
+                DispatchQueue.main.async {
+                    self.showToast(message: jsonModel?.message ?? "", complete: { [weak self] in
+                        self?.navigationController?.popViewController(animated: true)
+                    })
+                    
+                }
+            }
         }
         
-        self.showToast(message: "已送出", complete: { [weak self] in
-            self?.navigationController?.popViewController(animated: true)
-        })
+
         
     }
     

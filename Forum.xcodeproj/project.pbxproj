@@ -166,8 +166,8 @@
 			children = (
 				3682FE4429A323A1008A3702 /* LanchViewController.swift */,
 				36D4185C29A610550016A359 /* WebController.swift */,
+				36AEB37A2A177A40004FF99B /* AddNews */,
 				3682FE5729A49728008A3702 /* List */,
-				3682FE3629A3125E008A3702 /* AddNewsViewController.swift */,
 				3682FE5829A49858008A3702 /* Login */,
 				3682FE5229A496E3008A3702 /* Regis */,
 				3682FE3E29A32189008A3702 /* CustomView */,
@@ -247,6 +247,14 @@
 				3682FE5929A4986A008A3702 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		36AEB37A2A177A40004FF99B /* AddNews */ = {
+			isa = PBXGroup;
+			children = (
+				3682FE3629A3125E008A3702 /* AddNewsViewController.swift */,
+			);
+			path = AddNews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -105,7 +105,7 @@ class RegisViewModel: NSObject {
                     "birthday":self?.regisModel.birthday ?? ""
                 ]
                 
-                APIService.shared.requestWithParam(urlText: .login,
+                APIService.shared.requestWithParam(urlText: .regis,
                                                    params: param,
                                                    modelType: DefaultSuccessModel.self) { jsonModel, error in
                     if let model = jsonModel {

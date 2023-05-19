@@ -111,7 +111,7 @@ class ListViewController: BaseTableViewController {
 
 extension ListViewController: ListViewMethod {
     func nameButtonPressed(model: NewsModel) {
-        let webVC = WebViewController(url: "https://www.google.com.tw",title: model.name ?? "")
+        let webVC = WebViewController(url: "https://www.google.com.tw",title: model.account ?? "")
         self.navigationController?.pushViewController(webVC, animated: true)
     }
 }

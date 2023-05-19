@@ -15,11 +15,14 @@ class LanchViewController: BaseViewController {
         if let _ = UserInfoCenter.shared.loadValue(.userAccount) as? String {
             
             LoginCenter().autoLogin { [weak self] login in
-                if login {
-                    self?.firstWindows?.rootViewController = UINavigationController(rootViewController: ListViewController())
-                } else {
-                    self?.showNoAccoundAlert()
+                DispatchQueue.main.async {
+                    if login {
+                        self?.firstWindows?.rootViewController = UINavigationController(rootViewController: ListViewController())
+                    } else {
+                        self?.showNoAccoundAlert()
+                    }
                 }
+
             }
             
             self.showToast(message: "自動登入中...")

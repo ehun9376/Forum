@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "228940AA-C753-4DC6-9384-0124A4848CBA"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "023B5B22-209E-4B6B-9955-AC65D5328406"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Forum/Pages/Model/NewsListModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "init(json:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F31ABFD3-7A19-489F-A5E7-DF291918BAA5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Forum/Pages/List/ListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "setupRowModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B01136AE-A522-43F2-9540-C34FB1C40B1E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Forum/Pages/AddNews/AddNewsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "sendNewsAPI(content:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B01136AE-A522-43F2-9540-C34FB1C40B1E - c056d3cbbf062a2b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Forum.DefaultSuccessModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Forum.AddNewsViewController.sendNewsAPI(content: Swift.String) -&gt; ()"
+                  moduleName = "Forum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ehun9376/Desktop/Forum/Forum/Pages/AddNews/AddNewsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  uuid = "B01136AE-A522-43F2-9540-C34FB1C40B1E - c1a5cf4fd1e55eb9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 (Swift.Optional&lt;Forum.DefaultSuccessModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Forum.AddNewsViewController.sendNewsAPI(content: Swift.String) -&gt; ()"
+                  moduleName = "Forum"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ehun9376/Desktop/Forum/Forum/Pages/AddNews/AddNewsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

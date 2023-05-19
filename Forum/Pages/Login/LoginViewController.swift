@@ -29,10 +29,12 @@ class LoginViewController: BaseTableViewController {
 
 extension LoginViewController: LoginMethod {
     func loginComplete(success: Bool) {
-        if success {
-            self.firstWindows?.rootViewController = UINavigationController(rootViewController:  ListViewController())
-        } else {
-            self.showSingleAlert(title: "帳號密碼錯誤", message: "請再試一次")
+        DispatchQueue.main.async {
+            if success {
+                self.firstWindows?.rootViewController = UINavigationController(rootViewController:  ListViewController())
+            } else {
+                self.showSingleAlert(title: "帳號密碼錯誤", message: "請再試一次")
+            }
         }
     }
     func regisButtonAction() {

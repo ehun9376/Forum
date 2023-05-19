@@ -42,6 +42,8 @@ class APIService: NSObject {
     enum URLText: String {
         case regis = "http://www.yihuang.online/regis.php?"
         case login = "http://www.yihuang.online/login.php?"
+        case getAllPost = "http://www.yihuang.online/getAllPost.php?"
+        case addPost = "http://www.yihuang.online/addPost.php?"
     }
     //http://www.yihuang.online/regis.php?name=johnhhh&account=joh123456&password=1234&birthday=0850501
     //http://www.yihuang.online/login.php?account=joh123456&password=1234
