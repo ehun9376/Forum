@@ -7,7 +7,9 @@
 
 import Foundation
 
-class RegisModel: NSObject {
+class RegisModel: NSObject, JsonModel {
+
+    
     
     var account: String?
     
@@ -41,4 +43,11 @@ class RegisModel: NSObject {
         self.birthday = nil
     }
     
+    required init(json: JBJson) {
+        let info = json["infoList"].arrayValue.first
+        self.account = info?["account"].stringValue
+        self.name = info?["name"].stringValue
+        self.birthday = info?["birthday"].stringValue
+        
+    }
 }

@@ -44,6 +44,8 @@ class APIService: NSObject {
         case login = "http://www.yihuang.online/login.php?"
         case getAllPost = "http://www.yihuang.online/getAllPost.php?"
         case addPost = "http://www.yihuang.online/addPost.php?"
+        case getPersonalInfo = "http://www.yihuang.online/getPersonalInfo.php?"
+        case getPersonalPost = "http://www.yihuang.online/getPersonalPost.php?"
     }
     //http://www.yihuang.online/regis.php?name=johnhhh&account=joh123456&password=1234&birthday=0850501
     //http://www.yihuang.online/login.php?account=joh123456&password=1234

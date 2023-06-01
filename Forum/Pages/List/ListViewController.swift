@@ -13,15 +13,16 @@ class ListViewController: BaseTableViewController {
     
     var addNewsButton = FloatingButton()
     
+    var freshControll = UIRefreshControl()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "討論區"
         
         self.setupBarAppearance(color: .white)
         
         self.resetTableView()
-        self.setupFloatButton()
+//        self.setupFloatButton()
         self.setupRightItem()
         
         self.regisCellID(cellIDs: [
@@ -31,7 +32,18 @@ class ListViewController: BaseTableViewController {
         
         self.viewModel = .init(delegate: self, adapter: .init(self.defaultTableView))
         
+        self.freshControll.addTarget(self, action: #selector(fresh), for: .valueChanged)
         
+        self.defaultTableView.refreshControl = self.freshControll
+        
+    }
+    
+    @objc func fresh() {
+        self.viewModel?.setupRowModel(complete: {
+            DispatchQueue.main.async {
+                self.freshControll.endRefreshing()
+            }
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,21 +65,21 @@ class ListViewController: BaseTableViewController {
         
         NSLayoutConstraint.activate([
             self.defaultTableView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            self.defaultTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,constant: -90),
+            self.defaultTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             self.defaultTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             self.defaultTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
         ])
     }
     
     func setupFloatButton() {
-        self.addNewsButton = .init(action: { [weak self] in
-            self?.addNews()
-        })
-        self.view.addSubview(self.addNewsButton)
-        NSLayoutConstraint.activate([
-            self.addNewsButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
-            self.addNewsButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -30)
-        ])
+//        self.addNewsButton = .init(action: { [weak self] in
+//            self?.addNews()
+//        })
+//        self.view.addSubview(self.addNewsButton)
+//        NSLayoutConstraint.activate([
+//            self.addNewsButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
+//            self.addNewsButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -30)
+//        ])
     }
     
     func addNews() {
@@ -111,7 +123,11 @@ class ListViewController: BaseTableViewController {
 
 extension ListViewController: ListViewMethod {
     func nameButtonPressed(model: NewsModel) {
-        let webVC = WebViewController(url: "https://www.google.com.tw",title: model.account ?? "")
-        self.navigationController?.pushViewController(webVC, animated: true)
+        let vc = PersonalViewController()
+        vc.account = model.account
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    func addNewsRowDidSelect() {
+        self.addNews()
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 
 protocol ListViewMethod {
     func nameButtonPressed(model: NewsModel)
+    func addNewsRowDidSelect()
 }
 
 class ListViewModel: NSObject {
@@ -22,7 +23,7 @@ class ListViewModel: NSObject {
         self.adapter = adapter
     }
     
-    func setupRowModel() {
+    func setupRowModel(complete: (()->())? = nil) {
         var rowModels: [CellRowModel] = []
 
         if LocalTestCenter.shared.isLocalTest {
@@ -37,6 +38,10 @@ class ListViewModel: NSObject {
                     print(error.localizedDescription)
                 }
                 
+                if StatusCenter.shared.isLogin() {
+                    rowModels.append(self.createHeadRowModel())
+                }
+                
                 if let jsonModel = jsonModel, jsonModel.success {
                     for model in jsonModel.listModel.reversed() {
                         rowModels.append(self.creatNewsRowModel(newsModel: model))
@@ -45,6 +50,7 @@ class ListViewModel: NSObject {
                 } else {
                     print(jsonModel?.message ?? "")
                 }
+                complete?()
             }
         }
 
@@ -72,7 +78,9 @@ class ListViewModel: NSObject {
     }
     
     func createHeadRowModel() -> CellRowModel {
-        let rowModel = HeadCellRowModel(headImageURLText: nil)
+        let rowModel = HeadCellRowModel(headImageURLText: nil, cellDidSelect: { row in
+            self.delegate?.addNewsRowDidSelect()
+        })
         
         return rowModel
     }

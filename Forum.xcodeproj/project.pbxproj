@@ -47,6 +47,8 @@
 		3682FE5E29A4A048008A3702 /* LocalTestCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3682FE5D29A4A048008A3702 /* LocalTestCenter.swift */; };
 		369C0A3329E9057F00155112 /* DefaultSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369C0A3229E9057F00155112 /* DefaultSuccessModel.swift */; };
 		36D4185D29A610550016A359 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D4185C29A610550016A359 /* WebController.swift */; };
+		945425B72A28E8C000F21E42 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945425B62A28E8C000F21E42 /* PersonalViewController.swift */; };
+		945425B92A28E92E00F21E42 /* PersonalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945425B82A28E92E00F21E42 /* PersonalViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		3682FE5D29A4A048008A3702 /* LocalTestCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTestCenter.swift; sourceTree = "<group>"; };
 		369C0A3229E9057F00155112 /* DefaultSuccessModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSuccessModel.swift; sourceTree = "<group>"; };
 		36D4185C29A610550016A359 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
+		945425B62A28E8C000F21E42 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		945425B82A28E92E00F21E42 /* PersonalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 			children = (
 				3682FE4429A323A1008A3702 /* LanchViewController.swift */,
 				36D4185C29A610550016A359 /* WebController.swift */,
+				945425B52A28E8A500F21E42 /* Personal */,
 				36AEB37A2A177A40004FF99B /* AddNews */,
 				3682FE5729A49728008A3702 /* List */,
 				3682FE5829A49858008A3702 /* Login */,
@@ -257,6 +262,15 @@
 			path = AddNews;
 			sourceTree = "<group>";
 		};
+		945425B52A28E8A500F21E42 /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				945425B62A28E8C000F21E42 /* PersonalViewController.swift */,
+				945425B82A28E92E00F21E42 /* PersonalViewModel.swift */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,6 +351,7 @@
 				36131FD7299DD0E6002C1DF4 /* JBJson.swift in Sources */,
 				3682FE5C29A49A77008A3702 /* LoginCenter.swift in Sources */,
 				36131FE0299DD618002C1DF4 /* ListViewModel.swift in Sources */,
+				945425B72A28E8C000F21E42 /* PersonalViewController.swift in Sources */,
 				3682FE4A29A46B00008A3702 /* TitleTextFieldCell.swift in Sources */,
 				369C0A3329E9057F00155112 /* DefaultSuccessModel.swift in Sources */,
 				36131FD1299DD0E6002C1DF4 /* Extension.swift in Sources */,
@@ -360,6 +375,7 @@
 				36131FD4299DD0E6002C1DF4 /* TableViewAdapter.swift in Sources */,
 				3613E6E2299E130D00955044 /* HeadCell.swift in Sources */,
 				36131FD6299DD0E6002C1DF4 /* CellProtocol.swift in Sources */,
+				945425B92A28E92E00F21E42 /* PersonalViewModel.swift in Sources */,
 				36131FDA299DD0E6002C1DF4 /* DeviceType.swift in Sources */,
 				3682FE5E29A4A048008A3702 /* LocalTestCenter.swift in Sources */,
 				36131FD9299DD0E6002C1DF4 /* BaseTableViewController.swift in Sources */,
