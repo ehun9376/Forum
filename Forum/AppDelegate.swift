@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = LanchViewController()
         window?.makeKeyAndVisible()
-        
+        if UserInfoCenter.shared.loadValue(.iaped) == nil {
+            UserInfoCenter.shared.storeValue(.iaped, data: 3)
+        }
         return true
     }
 

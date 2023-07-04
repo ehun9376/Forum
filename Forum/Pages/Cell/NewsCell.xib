@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,27 +20,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Hb-YI-DF4">
                         <rect key="frame" x="0.0" y="5" width="595" height="364"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0c5-Jh-0Vx">
-                                <rect key="frame" x="20" y="20" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="FjU-Um-Ncj"/>
-                                    <constraint firstAttribute="height" constant="50" id="HOG-Zw-yFU"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irm-TZ-lxg">
-                                <rect key="frame" x="80" y="49" width="495" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shD-NS-BDU">
-                                <rect key="frame" x="80" y="20" width="495" height="21"/>
+                                <rect key="frame" x="20" y="20" width="555" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pCJ-Gn-eKG">
-                                <rect key="frame" x="20" y="90" width="555" height="100"/>
+                                <rect key="frame" x="20" y="51" width="555" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Ll3-id-ZD7"/>
@@ -50,25 +37,20 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnE-0A-6nh">
-                                <rect key="frame" x="500" y="195" width="75" height="164"/>
+                                <rect key="frame" x="500" y="156" width="75" height="203"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="irm-TZ-lxg" firstAttribute="bottom" secondItem="0c5-Jh-0Vx" secondAttribute="bottom" id="4wY-wG-H3b"/>
-                            <constraint firstItem="irm-TZ-lxg" firstAttribute="leading" secondItem="shD-NS-BDU" secondAttribute="leading" id="7pP-Ev-mg3"/>
-                            <constraint firstItem="irm-TZ-lxg" firstAttribute="trailing" secondItem="shD-NS-BDU" secondAttribute="trailing" id="En8-Fj-i3r"/>
                             <constraint firstItem="FnE-0A-6nh" firstAttribute="top" secondItem="pCJ-Gn-eKG" secondAttribute="bottom" constant="5" id="Ing-oC-w0g"/>
-                            <constraint firstItem="0c5-Jh-0Vx" firstAttribute="leading" secondItem="2Hb-YI-DF4" secondAttribute="leading" constant="20" id="ZII-TL-Rjb"/>
-                            <constraint firstItem="pCJ-Gn-eKG" firstAttribute="top" secondItem="0c5-Jh-0Vx" secondAttribute="bottom" constant="20" id="ZOT-qB-DBM"/>
-                            <constraint firstItem="shD-NS-BDU" firstAttribute="leading" secondItem="0c5-Jh-0Vx" secondAttribute="trailing" constant="10" id="fvQ-y7-tth"/>
-                            <constraint firstItem="shD-NS-BDU" firstAttribute="top" secondItem="0c5-Jh-0Vx" secondAttribute="top" id="gIJ-Rp-ANo"/>
-                            <constraint firstItem="0c5-Jh-0Vx" firstAttribute="top" secondItem="2Hb-YI-DF4" secondAttribute="top" constant="20" id="n5z-Mk-rGS"/>
+                            <constraint firstItem="irm-TZ-lxg" firstAttribute="top" secondItem="2Hb-YI-DF4" secondAttribute="top" constant="20" id="R5N-SA-WdI"/>
+                            <constraint firstAttribute="trailing" secondItem="irm-TZ-lxg" secondAttribute="trailing" constant="20" id="e4S-SZ-snK"/>
+                            <constraint firstItem="irm-TZ-lxg" firstAttribute="leading" secondItem="2Hb-YI-DF4" secondAttribute="leading" constant="20" id="naM-08-vZt"/>
+                            <constraint firstItem="pCJ-Gn-eKG" firstAttribute="top" secondItem="irm-TZ-lxg" secondAttribute="bottom" constant="10" id="pFc-97-7p9"/>
                             <constraint firstAttribute="trailing" secondItem="pCJ-Gn-eKG" secondAttribute="trailing" constant="20" id="qLm-aE-Eny"/>
                             <constraint firstItem="pCJ-Gn-eKG" firstAttribute="leading" secondItem="2Hb-YI-DF4" secondAttribute="leading" constant="20" id="t1r-uZ-z2Y"/>
-                            <constraint firstAttribute="trailing" secondItem="shD-NS-BDU" secondAttribute="trailing" constant="20" id="ut7-NQ-uNH"/>
                             <constraint firstItem="FnE-0A-6nh" firstAttribute="trailing" secondItem="pCJ-Gn-eKG" secondAttribute="trailing" id="xI1-Mi-qFV"/>
                             <constraint firstAttribute="bottom" secondItem="FnE-0A-6nh" secondAttribute="bottom" priority="999" constant="5" id="ziZ-cd-XaO"/>
                         </constraints>
@@ -84,10 +66,8 @@
             <connections>
                 <outlet property="contentTextView" destination="pCJ-Gn-eKG" id="7th-A8-mCF"/>
                 <outlet property="dateLabel" destination="irm-TZ-lxg" id="w88-Br-lpt"/>
-                <outlet property="headImageView" destination="0c5-Jh-0Vx" id="JIM-EQ-f1M"/>
                 <outlet property="insideView" destination="2Hb-YI-DF4" id="z2I-s0-P8N"/>
                 <outlet property="moreButton" destination="FnE-0A-6nh" id="ndK-U9-6Cf"/>
-                <outlet property="nameLabel" destination="shD-NS-BDU" id="zg4-VY-XnH"/>
                 <outlet property="textViewHeight" destination="Ll3-id-ZD7" id="b5y-OQ-O79"/>
             </connections>
             <point key="canvasLocation" x="241.98473282442748" y="88.380281690140848"/>

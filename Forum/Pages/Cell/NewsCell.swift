@@ -42,11 +42,9 @@ class NewsCell: UITableViewCell {
     
     @IBOutlet weak var insideView: UIView!
     
-    @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var dateLabel: UILabel!
     
-    @IBOutlet weak var headImageView: UIImageView!
     
     @IBOutlet weak var contentTextView: UITextView!
     
@@ -80,17 +78,8 @@ class NewsCell: UITableViewCell {
         self.insideView.layer.cornerRadius = 5
         self.insideView.clipsToBounds = true
         
-        self.nameLabel.isUserInteractionEnabled = true
-        self.nameLabel.numberOfLines = 1
-        self.nameLabel.textColor = .blue
-        let tap = UITapGestureRecognizer(target: self, action: #selector(nameLabelAction))
-        tap.numberOfTapsRequired = 1
-        self.nameLabel.addGestureRecognizer(tap)
-        
         self.dateLabel.numberOfLines = 1
-        
-        self.headImageView.layer.cornerRadius = 25
-        
+                
         self.contentTextView.layer.borderColor = UIColor.lightGray.cgColor
         self.contentTextView.layer.borderWidth = 0.5
         self.contentTextView.layer.cornerRadius = 5
@@ -126,16 +115,9 @@ extension NewsCell: CellBinding {
     func setupCellView(model: CellModelBase) {
         guard let rowModel = model as? NewsCellRowModel else { return }
         self.rowModel = rowModel
-        self.nameLabel.text = rowModel.name
         self.dateLabel.text = rowModel.date
         self.contentTextView.text = rowModel.content
-        
-        if let urlText = rowModel.headImageURL {
-            self.headImageView.setImageFromURL(urlText: urlText)
-        } else {
-            self.headImageView.image = UIImage(named: "pho_default_pic_home")
-        }
-        
+                
         self.textViewHeight.constant = normalSize
         
         self.moreButton.setTitle(rowModel.isOpen ? "查看更少" : "查看更多", for: .normal)

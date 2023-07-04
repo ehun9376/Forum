@@ -33,52 +33,39 @@ class AddNewsViewController: BaseViewController {
     }
     
     func setupRightItem() {
-        self.navigationItem.rightBarButtonItem = .init(title: "送出", style: .done, target: self, action: #selector(rightItemAction))
+        self.navigationItem.rightBarButtonItem = .init(title: "紀錄", style: .done, target: self, action: #selector(rightItemAction))
     }
     
     @objc func rightItemAction() {
         self.view.endEditing(true)
         guard let text = self.placeHolderTextView.text, text != "" else {
-            self.showSingleAlert(title: "提示", message: "不能送空的訊息喔~")
+            self.showSingleAlert(title: "提示", message: "不能紀錄的訊息喔~")
             return
         }
         self.showAlert(title: "提示",
-                       message: "確定要送出了嗎?",
+                       message: "確定要紀錄了嗎?",
                        confirmAction: { [weak self] in
+            
+            guard LocalTestCenter.shared.times > 0 else {
+                self?.showToast(message: "次數用完囉，請至設定頁面購買。")
+                return
+            }
+            
+            LocalTestCenter.shared.times -= 1
             self?.sendNewsAPI(content: text)
         },
                        cancelAction: nil)
     }
     
     func sendNewsAPI(content: String = "") {
-        //TODO: - 接上ＡＰＩ
-        print(content)
         
-        if LocalTestCenter.shared.isLocalTest {
-            let model = NewsModel(account: UserInfoCenter.shared.loadValue(.userAccount) as? String ?? "",
-                                  content: content,
-                                  date: Date().toString())
-            LocalTestCenter.shared.newsModels.append(model)
-            self.showToast(message: "已送出", complete: { [weak self] in
-                self?.navigationController?.popViewController(animated: true)
-            })
-        } else {
-            
-            let param = [
-                "account": UserInfoCenter.shared.loadValue(.userAccount) ?? "",
-                "content": content,
-            ]
-            APIService.shared.requestWithParam(urlText: .addPost, params: param, modelType: DefaultSuccessModel.self) { jsonModel, error in
-                DispatchQueue.main.async {
-                    self.showToast(message: jsonModel?.message ?? "", complete: { [weak self] in
-                        self?.navigationController?.popViewController(animated: true)
-                    })
-                    
-                }
-            }
-        }
-        
-
+        let model = NewsModel(account: "",
+                              content: content,
+                              date: Date().toString())
+        LocalTestCenter.shared.newsModels.append(model)
+        self.showToast(message: "已紀錄", complete: { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        })
         
     }
     

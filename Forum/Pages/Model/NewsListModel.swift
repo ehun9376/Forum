@@ -23,7 +23,29 @@ class NewsListModel: JsonModel {
 
 }
 
-class NewsModel: JsonModel {
+class NewsModel: JsonModel, Codable {
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.account = try container.decodeIfPresent(String.self, forKey: .account)
+        self.content = try container.decodeIfPresent(String.self, forKey: .content)
+        self.date = try container.decodeIfPresent(String.self, forKey: .date)
+    }
+    
+    enum CodingKeys: CodingKey {
+        case account
+        case content
+        case date
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(self.account, forKey: .account)
+        try container.encodeIfPresent(self.content, forKey: .content)
+        try container.encodeIfPresent(self.date, forKey: .date)
+    }
+    
+    
     
     var account: String?
         

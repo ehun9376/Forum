@@ -42,12 +42,17 @@ open class BaseViewController: UIViewController {
     }
     
     func setupBarAppearance(color: UIColor) {
-        let barAppearance = UINavigationBarAppearance()
-        barAppearance.backgroundColor = color
-        barAppearance.shadowColor = .clear
-        barAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14,weight: .bold),NSAttributedString.Key.foregroundColor : UIColor.white]
-        navigationItem.standardAppearance = barAppearance
-        navigationItem.scrollEdgeAppearance = barAppearance
+        if #available(iOS 13.0, *) {
+            let barAppearance = UINavigationBarAppearance()
+            barAppearance.backgroundColor = color
+            barAppearance.shadowColor = .clear
+            barAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14,weight: .bold),NSAttributedString.Key.foregroundColor : UIColor.white]
+            navigationItem.standardAppearance = barAppearance
+            navigationItem.scrollEdgeAppearance = barAppearance
+        } else {
+            // Fallback on earlier versions
+        }
+
     }
     
     public func showAlert(title:String, message: String, confirmTitle: String = "確認", cancelTitle: String = "取消", confirmAction: (()->())?, cancelAction:(()->())?){

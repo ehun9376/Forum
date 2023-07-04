@@ -8,7 +8,6 @@
 import Foundation
 
 protocol ListViewMethod {
-    func nameButtonPressed(model: NewsModel)
     func addNewsRowDidSelect()
 }
 
@@ -25,38 +24,12 @@ class ListViewModel: NSObject {
     
     func setupRowModel(complete: (()->())? = nil) {
         var rowModels: [CellRowModel] = []
-
-        if LocalTestCenter.shared.isLocalTest {
-            for model in LocalTestCenter.shared.newsModels.reversed() {
-                rowModels.append(self.creatNewsRowModel(newsModel: model))
-            }
-            self.adapter?.updateTableViewData(rowModels: rowModels)
-        } else {
-            APIService.shared.requestWithParam(urlText: .getAllPost, params: [:], modelType: NewsListModel.self) { jsonModel, error in
-                
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-                
-                if StatusCenter.shared.isLogin() {
-                    rowModels.append(self.createHeadRowModel())
-                }
-                
-                if let jsonModel = jsonModel, jsonModel.success {
-                    for model in jsonModel.listModel.reversed() {
-                        rowModels.append(self.creatNewsRowModel(newsModel: model))
-                    }
-                    self.adapter?.updateTableViewData(rowModels: rowModels)
-                } else {
-                    print(jsonModel?.message ?? "")
-                }
-                complete?()
-            }
+        
+        for model in LocalTestCenter.shared.newsModels.reversed() {
+            rowModels.append(self.creatNewsRowModel(newsModel: model))
         }
+        self.adapter?.updateTableViewData(rowModels: rowModels)
 
-        
-       
-        
     }
     
     func creatNewsRowModel(newsModel: NewsModel) -> CellRowModel {
@@ -66,7 +39,7 @@ class ListViewModel: NSObject {
                                         headImageURL: nil,
                                         content: newsModel.content,
                                         nameLabelAction: { [weak self]  in
-            self?.delegate?.nameButtonPressed(model: newsModel)
+//            self?.delegate?.nameButtonPressed(model: newsModel)
         },
                                         heightChangeAction: { [weak self] in
             self?.adapter?.tableView?.beginUpdates()
