@@ -61,7 +61,7 @@ class SettingViewController: BaseTableViewController {
             })
             
         })
-        self.rowModels.append(timesRow)
+        self.rowModels.append(restoreRow)
         
         
         self.adapter?.updateTableViewData(rowModels: self.rowModels)
